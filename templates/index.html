@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝙎𝙖𝙢𝙞𝙪𝙡 𝙈𝙤𝙩𝙤 𝙂𝙖𝙧𝙖𝙜𝙚</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <style>
+        body {
+            background-image: url('/static/images/garage_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .welcome-section {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+            margin-top: 20px;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        .gallery img {
+            border: 3px solid #FF5722;
+            border-radius: 10px;
+        }
+        .navbar-dark .navbar-brand, .navbar-dark .nav-link {
+            color: #FFA726 !important;
+        }
+        .pdf-section, .payment-section {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        #qrcode {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <div class="welcome-section">
+            <h1>🔧 আমদর গযরজ সবগতম</h1>
+          
+             <h1>
+ 🏍 🏍🏍 🏍🏍🏍 MALDA MANGALBARI 🏍 🏍🏍 🏍🏍🏍 
+             
+             
+            <h2 style="color: #2196F3;"> 🏍⚡  HERO | YAMAHA | BAJAJ | TVS | HONDA | SUZUKI | ROYAL | VESPA </h2>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">🏠 হম</a>
+                    <a class="nav-link" href="/booking">🛠 𝔹𝕚𝕜𝕖 𝕊𝕖𝕣𝕧𝕚𝕔𝕖 𝔹𝕠𝕠𝕜𝕚𝕟𝕘</a>
+                    <a class="nav-link" href="/services">🔧 আমদর পরষব</a>
+                    <a class="nav-link" href="/contact">📞 যগযগ</a>
+                </div>
+            </nav>
+        </div>
 
+        <div class="gallery">
+            <h2>📸 🏍  𝙎𝙖𝙢𝙞𝙪𝙡 𝙈𝙤𝙩𝙤 𝙂𝙖𝙧𝙖𝙜𝙚
+</h2>
+
+            <h2> 🏍 যকন বইকর কজ করন হয! 🏍
+</h2>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/static/images/Bike Repair.jpg" class="img-fluid rounded shadow" alt="Bike Repair" style="width:200px; height:auto;">
+                </div>
+                <div class="col-md-4">
+                    <img src="/static/images/bike_tuning.jpg" class="img-fluid rounded shadow" alt="Bike Tuning" style="width:150px; height:auto;">
+                    <div class="pdf-section mt-2">
+                        <a href="/static/pdf/bike_tuning_diagnostic.pdf" target="_blank" class="btn btn-warning">🚳 টউন ডযগনসটক PDF ডউনলড</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="/static/images/how-to-tune-a-car-combustion-cycle.gif" class="img-fluid rounded shadow" alt="Engine Check">
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-section mt-5">
+            <h2>💳 অনলইন পমনট (UPI QR Code)</h2>
+            <input type="number" id="amount" placeholder="পরমণ (INR)" class="form-control w-50 mx-auto mt-2">
+            <button id="generate-qr" class="btn btn-success mt-2">🔗 QR Code জনরট করন</button>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('generate-qr').onclick = function() {
+            var amount = document.getElementById("amount").value;
+            if (amount === "" || amount <= 0) {
+                alert("সঠক পরমণ লখন!");
+                return;
+            }
+            var upi_id = "9933924274-2@ybl"; // আপনর UPI ID দন
+            var upi_link = `upi://pay?pa=${upi_id}&pn=Garage Service&am=${amount}&cu=INR&tn=Bike Service Payment`;
+            document.getElementById("qrcode").innerHTML = "";
+            new QRCode(document.getElementById("qrcode"), upi_link);
+        };
+    </script>
+</body>
+</html>
+                           
