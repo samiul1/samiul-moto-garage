@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Service Booking</title>
+    <style>
+        body {
+            background-image: url('https://www.aftonchemical.com/Afton/media/heroimages/SBU/PFI-engine-design-labeled.jpg'); /* ব্যাকগ্রাউন্ড ইমেজ */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            color: #fff;
+        }
+        .booking-form {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-form">
+        <h1>🛠️ বাইক সার্ভিস বুকিং ফর্ম</h1>
+        <form method="POST">
+            নাম: <input type="text" name="name" required><br>
+            বাইকের মডেল: <input type="text" name="bike_model" required><br>
+            সমস্যার বিবরণ: <textarea name="problem" required></textarea><br>
+            মোবাইল: <input type="text" name="phone" required><br>
+            ইমেইল: <input type="email" name="email" required><br>
+            বুকিং তারিখ: <input type="date" name="booking_date" required><br>
+            <input type="submit" value="✅ জমা দিন">
+        </form>
+    </div>
+</body>
+</html>
